@@ -1,22 +1,16 @@
 ﻿const int nomer = 2;
 const int n = 5;
 
-// Матрицаны құру
 int[,] matrix = GenerateMatrix(n, nomer);
 
-// Матрицаны шығару
 Console.WriteLine("Бастапқы матрица:");
 PrintMatrix(matrix);
 
-// Әр бағандағы ең үлкен элементтерді табу
 int[] B = FindMaxElements(matrix);
 
-// Нәтижені шығару
 Console.WriteLine("\nӘр бағандағы ең үлкен элементтер:");
 PrintArray(B);
 
-
-// Матрицаны құру әдісі
 static int[,] GenerateMatrix(int n, int nomer)
 {
     int[,] m = new int[n, n];
@@ -26,15 +20,12 @@ static int[,] GenerateMatrix(int n, int nomer)
     {
         for (int j = 0; j < n; j++)
         {
-            m[i, j] = random.Next(0, 100);
+            m[i, j] = random.Next(-10, 11);
         }
     }
 
     return m;
 }
-
-
-// Матрицаны экранға шығару әдісі
 static void PrintMatrix(int[,] m)
 {
     for (int i = 0; i < m.GetLength(0); i++)
@@ -48,8 +39,6 @@ static void PrintMatrix(int[,] m)
     }
 }
 
-
-// Әр бағандағы ең үлкен элементті табу әдісі
 static int[] FindMaxElements(int[,] m)
 {
     int rows = m.GetLength(0);
@@ -75,8 +64,6 @@ static int[] FindMaxElements(int[,] m)
     return B;
 }
 
-
-// B массивін экранға шығару әдісі
 static void PrintArray(int[] B)
 {
     for (int i = 0; i < B.Length; i++)
